@@ -17,7 +17,7 @@ public class Curso extends Conteudo{
     }
 
     public void setCargaHoraria(int cargaHoraria) {
-        cargaHoraria = cargaHoraria;
+        this.cargaHoraria = cargaHoraria;
     }
 
     @Override

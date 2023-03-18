@@ -1,9 +1,6 @@
 package br.com.dio.desafio.dominio;
 
-import java.util.LinkedHashSet;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 public class Dev {
 
@@ -15,7 +12,6 @@ public class Dev {
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
         bootcamp.getDevsInscritos().add(this);
     }
-
     public void progredir(){
         Optional<Conteudo> conteudo = this.conteudosInscritos.stream().findFirst();
         if (conteudo.isPresent()){
@@ -26,13 +22,14 @@ public class Dev {
         }
     }
 
-    public double calcularTotalXp(){
-        return this.conteudosConcluidos.stream().
-                mapToDouble(Conteudo::calcularXp)
+    public double calcularTotalXp() {
+       return this.conteudosConcluidos
+                .stream()
+                .mapToDouble(Conteudo::calcularXp)
                 .sum();
     }
 
-    public String getNome() {
+        public String getNome() {
         return nome;
     }
 
